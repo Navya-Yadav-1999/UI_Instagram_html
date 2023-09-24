@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sign up</title>
+<style>
+label{text-align: left}
+body{border-style:}
+ body{text-align: center}
+body{background-color:lightblue}
+
+
+</style>
+<script>
+  
+function validate() 
+{  
+
+	var x=document.f1.email.value;  
+	var atposition=x.indexOf("@");  
+	var dotposition=x.lastIndexOf(".");  
+	
+if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length)
+{  
+  alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+  return false;    
+}
+}
+
+	var firstpassword = document.f1.PW1.value;
+	var secondpassword = document.f1.PW2.value;
+	
+	if (firstpassword == secondpassword)
+	{
+		 return true;
+	}
+	else
+	{
+		alert("Plesae enter same password");
+	}
+}  
+  
+</script>  
+</head>
+<body>
+<form name = "f1"  onsubmit = "return validate()">
+<h2 style = "color:green">Sign Up</h2>
+<label>FirstName</label><br><input type = "text" placeholder="Enter your firstname"/><br>
+<label>LastName</label><br><input type = "text" placeholder="Enter your Last Name"/>
+<div>EmailId<br><input type = "text" name = "email" placeholder = "Enter Your Email Id "></div>
+<div>UserName<br><input type = "text" placeholder = "Enter User Name"></div>
+<div>Enter Password<br><input type = "password" maxlength = "8" name = "PW1" placeholder = "Enter valid password"></div>
+
+<li>Password must be one uppercase</li>
+<li>Password must be one lowercase</li>
+<li>Password must be one specialcharacter</li>
+<li>Password must be one numeric</li><br>
+
+
+<div>ReEnter your Password</div><input type = "Password" maxlength = "8" name = "PW2" placeholder = "Re enter your password"><br><br>
+<input type = "checkbox">
+<small>Accept our privacy and policy</small><br><br>
+<a href = "Submit.html"><button type= "button" style = "color:green">Submit</button></a>
+<input type = "reset" style = "color:red"/>
+</form>
+</body>
+</html>
